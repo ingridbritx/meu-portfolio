@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio – Ingrid Brito</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0 1rem 2rem;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #0f172a 100%);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+      margin-bottom: 2rem;
+    }
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #00d4ff;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.7);
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+    header h1 {
+      margin: 0.5rem 0 0.3rem;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: 0.9;
+      margin: 0.3rem 0;
+    }
+    section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+    }
+    section h2 {
+      color: #00d4ff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00d4ff;
+      padding-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      list-style: none;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    ul li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 1rem;
+    }
+    .skill-item {
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-weight: 600;
+      color: #00d4ff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
+    }
+    .skill-item:hover {
+      background: rgba(0,212,255,0.2);
+    }
+    .contact-info p, .contact-info a {
+      font-size: 1rem;
+      margin: 0.3rem 0;
+      color: #a78bfa;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .contact-info a:hover {
+      color: #00d4ff;
+      text-decoration: underline;
+    }
+    /* Accordion styles */
+    .accordion {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 0.8rem 1rem;
+      font-weight: 600;
+      color: #00d4ff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    .accordion:hover {
+      background: rgba(0, 212, 255, 0.2);
+    }
+    .accordion:after {
+      content: '\f078';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+      color: #00d4ff;
+    }
+    .accordion.active:after {
+      transform: rotate(180deg);
+    }
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+    .panel ul {
+      padding-left: 1rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 3rem;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 0 1rem 3rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQEjQJY09rFoCw/profile-displayphoto-shrink_800_800/B56ZeDuJV1H8Ag-/0/1750261604494?e=1760572800&v=beta&t=TZnxx1TmFbKM5266IA39gxMXKUHDKp4PzuuctfJb8yo" alt="Foto de perfil de Ingrid Brito" class="profile-img" />
+    <h1>Ingrid Brito</h1>
+    <p>Estudante iniciante de Desenvolvimento de Sistemas</p>
+    <p>🚀 Apaixonada por tecnologia e aprendizado contínuo. Do conserto de smartphones à criação de sistemas, estou construindo minha jornada para unir experiência prática e inovação digital.</p>
+  </header>
+  <section id="sobre-mim">
+    <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+    <p>
+      Sou estudante iniciante de Desenvolvimento de Sistemas, com conhecimentos básicos em programação, inteligência artificial e cibersegurança. Tenho mais de 6 anos de experiência em suporte técnico, atendimento ao cliente e gestão administrativa. Estou em busca de oportunidades de estágio em TI para aplicar meus conhecimentos, desenvolver novas habilidades e contribuir com soluções inovadoras.
+    </p>
+  </section>
+  <section id="experiencia">
+    <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+    <ul>
+      <li><strong>Mio Assistência Técnica (2018 – 2025)</strong> – Suporte técnico em smartphones, atendimento ao cliente, gestão financeira e processos administrativos.</li>
+      <li><strong>Pizzaria Família K (2017 – 2018)</strong> – Atendimento em alta demanda, registro de pedidos e suporte à operação.</li>
+      <li><strong>A F de Brito (2017)</strong> – Organização de documentos e apoio administrativo.</li>
+      <li><strong>Mob Center Assistência Técnica (2016)</strong> – Atendimento ao cliente, pequenos reparos e gestão de peças.</li>
+      <li><strong>Panco (2015)</strong> – Menor Aprendiz em apoio administrativo e organização de arquivos.</li>
+    </ul>
+  </section>
+  <section id="formacao">
+    <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
+    <ul>
+      <li>Técnico em Desenvolvimento de Sistemas – ETEC Irmã Agostina (Cursando)</li>
+      <li>Especialização em Programação com IA – SENAI (Cursando)</li>
+      <li>Cibersegurança – Cisco / JA Brasil (Cursando)</li>
+      <li>Técnico em Manutenção e Suporte em Informática – ETEC Prof. Adhemar Batista Heméritas (Concluído)</li>
+      <li>Técnico em Meio Ambiente – ETEC Getúlio Vargas (Concluído)</li>
+    </ul>
+  </section>
+  <section id="habilidades">
+    <h2><i class="fas fa-cogs"></i> Habilidades</h2>
+    <h3>💻 Hard Skills (Técnicas)</h3>
+    <div class="skills-grid">
+      <span class="skill-item"><i class="fas fa-code"></i> Programação (HTML, CSS, JavaScript)</span>
+      <span class="skill-item"><i class="fas fa-brain"></i> Lógica de programação</span>
+      <span class="skill-item"><i class="fas fa-shield-alt"></i> Fundamentos de cibersegurança (Cisco / JA Brasil)</span>
+      <span class="skill-item"><i class="fas fa-tools"></i> Manutenção e suporte em informática (hardware e software)</span>
+      <span class="skill-item"><i class="fas fa-network-wired"></i> Montagem e configuração de computadores e redes locais</span>
+      <span class="skill-item"><i class="fas fa-file-alt"></i> Pacote Office (Word, Excel, PowerPoint)</span>
+    </div>
+    <h3>🤝 Soft Skills (Comportamentais)</h3>
+    <div class="skills-grid">
+      <span class="skill-item"><i class="fas fa-comments"></i> Comunicação clara e empática</span>
+      <span class="skill-item"><i class="fas fa-users"></i> Trabalho em equipe</span>
+      <span class="skill-item"><i class="fas fa-tasks"></i> Organização e gestão de processos</span>
+      <span class="skill-item"><i class="fas fa-chalkboard-teacher"></i> Liderança de projetos</span>
+      <span class="skill-item"><i class="fas fa-headset"></i> Atendimento ao cliente</span>
+    </div>
+  </section>
+  <section id="contato" class="contact-info">
+    <h2><i class="fas fa-address-card"></i> Contato</h2>
+    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+    <p><i class="fas fa-phone"></i> (11) 94058-4831</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:ingridpatricialb@hotmail.com">ingridpatricialb@hotmail.com</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ingrid-brito-5b596a118" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/ingridbritx" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  </section>
+  <section id="info-adicionais">
+    <h2><i class="fas fa-info-circle"></i> Informações Adicionais</h2>
+    <button class="accordion">Projetos e Empreendimentos</button>
+    <div class="panel">
+      <ul>
+        <li><strong>Gravaê Personalizados</strong> – Criação de produtos personalizados, gestão de redes sociais, identidade visual e estratégias de vendas.</li>
+        <li><strong>Rubra 88 – Streetwear Conceitual</strong> – Co-criação de marca, desenvolvimento de identidade visual, pesquisas de persona e campanhas criativas.</li>
+        <li><strong>Lucrativa Assistência</strong> – Consultoria para assistências técnicas – Desenvolvimento de dicas de gestão, criação de e-book com orientações práticas e fornecedores estratégicos, auxiliando na otimização de processos e melhoria de resultados.</li>
+        <li><strong>TCC – Logística Reversa do Resíduo Eletrônico (Curso de Meio Ambiente)</strong> – Estudo aprofundado sobre sustentabilidade e gestão de resíduos.</li>
+        <li><strong>Mini Empresa – Junior Achievement (Ensino Médio)</strong> – Diretora Geral, liderando equipe no desenvolvimento de produtos sustentáveis com lixo eletrônico.</li>
+        <li><strong>ECOART (Ensino Médio)</strong> – Organizadora de projeto artístico, com produção de arte e decoração utilizando materiais recicláveis.</li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Ingrid Brito. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+      acc.addEventListener('click', () => {
+        acc.classList.toggle('active');
+        const panel = acc.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
